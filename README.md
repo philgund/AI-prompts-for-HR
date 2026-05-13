@@ -1,1 +1,1 @@
-# AI-prompts-for-HR-
+# AI-prompts-for-HR

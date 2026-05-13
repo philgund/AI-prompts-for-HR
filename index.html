@@ -347,6 +347,52 @@
     margin-bottom: 12px;
   }
 
+  /* Copy button wrapper */
+  .prompt-text-wrap {
+    position: relative;
+    margin-bottom: 12px;
+  }
+
+  .prompt-text-wrap .prompt-text {
+    margin-bottom: 0;
+    padding-right: 44px; /* room for button */
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--burgundy);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.7;
+    transition: opacity 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+
+  .copy-btn:hover { opacity: 1; }
+
+  .copy-btn.copied {
+    background: #1a7a4a;
+    opacity: 1;
+  }
+
+  .copy-btn svg {
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+  }
+
   .prompt-why {
     font-size: 13px;
     color: var(--dark);
@@ -627,11 +673,11 @@
   <div>
     <div class="cover-badge">Gratis guide · 2026</div>
     <h1 class="cover-title">AI for HR — <span>prompt-guiden</span> for ledere som vil bruke tiden riktig</h1>
-    <p class="cover-subtitle">Praktiske prompts per arbeidsflyt. Hva AI faktisk kan hjelpe med — og hva som fortsatt krever deg.</p>
+    <p class="cover-subtitle">Her er promptene vi vet funker — per oppgave, per situasjon, klar til bruk.</p>
   </div>
 
   <div class="cover-footer">
-    <p class="cover-footer-note">For HR-ledere og daglige ledere i norske, svenske og finske SMBer. Fri for fluff. Full av det som faktisk virker.</p>
+    <p class="cover-footer-note">For HR-ledere og daglige ledere i norske, svenske og finske SMBer.</p>
   </div>
   <div class="cover-year">2026</div>
 </section>
@@ -790,7 +836,7 @@
         <span class="prompt-task">Skriv en stillingsutlysning</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Opptre som en erfaren rekrutteringsrådgiver. Skriv en stillingsutlysning for en [stillingstittel] hos oss. Vi er en [bransje]-bedrift med [antall] ansatte i [by/land]. Vi ser etter noen med erfaring innen [3 nøkkelkrav]. Tonen vår er [varm og uformell / profesjonell]. Inkluder: kort bedriftspresentasjon (2 setninger), ansvarsoppgaver (5–7 punkter), krav (4–6 punkter), og en avsluttende setning som inviterer til søknad. Maks 350 ord.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-1">«Opptre som en erfaren rekrutteringsrådgiver. Skriv en stillingsutlysning for en [stillingstittel] hos oss. Vi er en [bransje]-bedrift med [antall] ansatte i [by/land]. Vi ser etter noen med erfaring innen [3 nøkkelkrav]. Tonen vår er [varm og uformell / profesjonell]. Inkluder: kort bedriftspresentasjon (2 setninger), ansvarsoppgaver (5–7 punkter), krav (4–6 punkter), og en avsluttende setning som inviterer til søknad. Maks 350 ord.»</div><button class="copy-btn" id="copy-btn-1" onclick="copyPrompt('prompt-text-1', 'copy-btn-1')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Persona + konkret struktur + lengdebegrensning = et utkast du faktisk kan bruke uten å skrive om fra bunnen.</p>
         <div class="huma-tip">
           <div class="huma-tip-icon">🏠</div>
@@ -805,7 +851,7 @@
         <span class="prompt-task">Generer strukturerte intervjuspørsmål</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Lag 6 strukturerte atferdsintervjuspørsmål for en [stillingstittel]-kandidat. Fokus på å avdekke [egenskap 1, f.eks. evne til å ta ansvar under usikkerhet] og [egenskap 2, f.eks. samarbeid på tvers av team]. For hvert spørsmål: skriv selve spørsmålet, hvilken egenskap det måler, og ett oppfølgingsspørsmål. Bruk STAR-metoden som ramme. Tonen er vennlig og profesjonell.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-2">«Lag 6 strukturerte atferdsintervjuspørsmål for en [stillingstittel]-kandidat. Fokus på å avdekke [egenskap 1, f.eks. evne til å ta ansvar under usikkerhet] og [egenskap 2, f.eks. samarbeid på tvers av team]. For hvert spørsmål: skriv selve spørsmålet, hvilken egenskap det måler, og ett oppfølgingsspørsmål. Bruk STAR-metoden som ramme. Tonen er vennlig og profesjonell.»</div><button class="copy-btn" id="copy-btn-2" onclick="copyPrompt('prompt-text-2', 'copy-btn-2')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Strukturerte spørsmål gir mer rettferdige intervjuer og bedre data å sammenligne kandidater på — AI hjelper deg raskt til et solid utgangspunkt.</p>
       </div>
     </div>
@@ -816,7 +862,7 @@
         <span class="prompt-task">Skriv et respektfullt avslagsbrev</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Skriv et vennlig og respektfullt avslagsbrev til en kandidat som søkte på stillingen som [stillingstittel]. Vi går ikke videre med søknaden, men ønsker å takke for interessen. Vi beholder CV-en til fremtidige muligheter. Hold det under 80 ord. Unngå klisjefraser som "vi hadde mange sterke kandidater". Tonen er varm og direkte.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-3">«Skriv et vennlig og respektfullt avslagsbrev til en kandidat som søkte på stillingen som [stillingstittel]. Vi går ikke videre med søknaden, men ønsker å takke for interessen. Vi beholder CV-en til fremtidige muligheter. Hold det under 80 ord. Unngå klisjefraser som "vi hadde mange sterke kandidater". Tonen er varm og direkte.»</div><button class="copy-btn" id="copy-btn-3" onclick="copyPrompt('prompt-text-3', 'copy-btn-3')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Avslagsbrev er noe de fleste utsetter. AI tar vekk blank-side-problemet og gjør at kandidatene dine får en god opplevelse — uansett utfall.</p>
       </div>
     </div>
@@ -848,7 +894,7 @@
         <span class="prompt-task">Lag en onboardingplan — 30-60-90 dager</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Lag en 30-60-90 dagers onboardingplan for en ny [stillingstittel] i en [bransje]-bedrift med [antall] ansatte. Inkluder: læringsmål per fase, nøkkelrelasjoner som bør etableres, og ett konkret, målbart mål per fase. Skriv det som en strukturert plan med overskrifter, ikke som flytende tekst.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-4">«Lag en 30-60-90 dagers onboardingplan for en ny [stillingstittel] i en [bransje]-bedrift med [antall] ansatte. Inkluder: læringsmål per fase, nøkkelrelasjoner som bør etableres, og ett konkret, målbart mål per fase. Skriv det som en strukturert plan med overskrifter, ikke som flytende tekst.»</div><button class="copy-btn" id="copy-btn-4" onclick="copyPrompt('prompt-text-4', 'copy-btn-4')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> En god onboardingplan er det som skiller mellom en nyansatt som trives og en som slutter før prøvetiden er over. AI gir deg rammeverket — du fyller inn din kultur og dine forventninger.</p>
         <div class="huma-tip">
           <div class="huma-tip-icon">🏠</div>
@@ -863,7 +909,7 @@
         <span class="prompt-task">Skriv en velkomstmail fra leder</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Skriv en varm velkomstmail fra [lederens navn] til [nyansattes navn] som starter som [stillingstittel] på [startdato]. Ta med: hva de kan forvente første dag, hvem de skal kontakte ved spørsmål, og én setning om teamkulturen vår som er [beskriv kulturen med 3 ord]. Tonen er vennlig og ekte — ikke korporat. Maks 120 ord.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-5">«Skriv en varm velkomstmail fra [lederens navn] til [nyansattes navn] som starter som [stillingstittel] på [startdato]. Ta med: hva de kan forvente første dag, hvem de skal kontakte ved spørsmål, og én setning om teamkulturen vår som er [beskriv kulturen med 3 ord]. Tonen er vennlig og ekte — ikke korporat. Maks 120 ord.»</div><button class="copy-btn" id="copy-btn-5" onclick="copyPrompt('prompt-text-5', 'copy-btn-5')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> En personlig velkomstmail setter tonen for hele forholdet. AI tar jobben med første utkast — du legger til det som gjør det ekte: noe spesifikt om personen, teamet eller startdagen.</p>
       </div>
     </div>
@@ -874,7 +920,7 @@
         <span class="prompt-task">Bygg en avslutningssamtale-mal (offboarding)</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Lag en avslutningssamtale-mal for en [stillingstittel] som slutter frivillig. Inkluder 8 spørsmål som dekker: relasjon til nærmeste leder, arbeidsbelastning og arbeidsforhold, bedriftskultur, kompensasjon og goder, og hva som eventuelt kunne ha endret beslutningen om å slutte. Tonen er åpen og ikke-defensiv. Vi ønsker ærlige svar.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-6">«Lag en avslutningssamtale-mal for en [stillingstittel] som slutter frivillig. Inkluder 8 spørsmål som dekker: relasjon til nærmeste leder, arbeidsbelastning og arbeidsforhold, bedriftskultur, kompensasjon og goder, og hva som eventuelt kunne ha endret beslutningen om å slutte. Tonen er åpen og ikke-defensiv. Vi ønsker ærlige svar.»</div><button class="copy-btn" id="copy-btn-6" onclick="copyPrompt('prompt-text-6', 'copy-btn-6')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Offboarding er gull — de fleste bedrifter samler ikke inn disse dataene systematisk. Det AI lager her er et godt utgangspunkt for å faktisk lære noe av avganger.</p>
       </div>
     </div>
@@ -902,7 +948,7 @@
         <span class="prompt-task">Analyser resultater fra medarbeiderundersøkelse</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Her er råresultatene fra vår siste medarbeiderundersøkelse: [lim inn anonymiserte data eller oppsummering]. Identifiser de 3 sterkeste positive temaene og de 3 største risikoområdene. For hvert risikoområde: foreslå ett konkret tiltak HR kan iverksette innen 30 dager. Hold tonen konstruktiv og handlingsorientert. Output som punkt-liste.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-7">«Her er råresultatene fra vår siste medarbeiderundersøkelse: [lim inn anonymiserte data eller oppsummering]. Identifiser de 3 sterkeste positive temaene og de 3 største risikoområdene. For hvert risikoområde: foreslå ett konkret tiltak HR kan iverksette innen 30 dager. Hold tonen konstruktiv og handlingsorientert. Output som punkt-liste.»</div><button class="copy-btn" id="copy-btn-7" onclick="copyPrompt('prompt-text-7', 'copy-btn-7')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> De fleste bedrifter gjennomfører undersøkelsen — og så tar det tre måneder å analysere den. AI komprimerer analysesteget dramatisk, så du kan bruke tid på tiltak i stedet.</p>
         <div class="huma-tip">
           <div class="huma-tip-icon">🏠</div>
@@ -917,7 +963,7 @@
         <span class="prompt-task">Skriv en anerkjennelsesmelding til en ansatt</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Skriv en ekte, spesifikk anerkjennelsesmelding til [Ansatt A] som [konkret prestasjon, f.eks. "ledet prosjektet fra kaos til levering på tid"]. Nevn hvilken impact det hadde på teamet. Hold det under 80 ord. Unngå generiske fraser som "god jobb" eller "fantastisk innsats". Tonen er varm og direkte — fra en kollega som faktisk la merke til det.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-8">«Skriv en ekte, spesifikk anerkjennelsesmelding til [Ansatt A] som [konkret prestasjon, f.eks. "ledet prosjektet fra kaos til levering på tid"]. Nevn hvilken impact det hadde på teamet. Hold det under 80 ord. Unngå generiske fraser som "god jobb" eller "fantastisk innsats". Tonen er varm og direkte — fra en kollega som faktisk la merke til det.»</div><button class="copy-btn" id="copy-btn-8" onclick="copyPrompt('prompt-text-8', 'copy-btn-8')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Anerkjennelse virker sterkest når den er spesifikk. AI hjelper deg formulere det presist — du legger inn det konkrete eksempelet som gjør det ekte.</p>
       </div>
     </div>
@@ -928,7 +974,7 @@
         <span class="prompt-task">Generer spørsmål til en pulsundersøkelse</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Lag 5 spørsmål til en kort pulsundersøkelse om [tema, f.eks. "tilbakevendelse til kontoret etter sommerferien" / "trivsel etter organisasjonsendring"]. Spørsmålene skal kunne besvares på 1–5 skala ELLER med ja/nei. Inkluder 1 åpent tekstfelt til slutt. Hold det enkelt nok til at folk faktisk svarer.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-9">«Lag 5 spørsmål til en kort pulsundersøkelse om [tema, f.eks. "tilbakevendelse til kontoret etter sommerferien" / "trivsel etter organisasjonsendring"]. Spørsmålene skal kunne besvares på 1–5 skala ELLER med ja/nei. Inkluder 1 åpent tekstfelt til slutt. Hold det enkelt nok til at folk faktisk svarer.»</div><button class="copy-btn" id="copy-btn-9" onclick="copyPrompt('prompt-text-9', 'copy-btn-9')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Korte, relevante undersøkelser gir høyere svarprosent. AI hjelper deg treffe tonen og holde det fokusert på én ting av gangen.</p>
       </div>
     </div>
@@ -956,7 +1002,7 @@
         <span class="prompt-task">Forbered en medarbeidersamtale</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Hjelp meg forberede en medarbeidersamtale med en ansatt i rollen som [stillingstittel]. Kontekst: [beskriv kortfattet — f.eks. "sterk faglig, men viser tegn til utbrenthet de siste månedene"]. Generer: 5 åpne spørsmål som gir rom for ærlig refleksjon, 2 spørsmål om fremtidige mål og utvikling, og 1 spørsmål om hva jeg som leder kan gjøre bedre. Tonen er coachende, ikke evaluerende.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-10">«Hjelp meg forberede en medarbeidersamtale med en ansatt i rollen som [stillingstittel]. Kontekst: [beskriv kortfattet — f.eks. "sterk faglig, men viser tegn til utbrenthet de siste månedene"]. Generer: 5 åpne spørsmål som gir rom for ærlig refleksjon, 2 spørsmål om fremtidige mål og utvikling, og 1 spørsmål om hva jeg som leder kan gjøre bedre. Tonen er coachende, ikke evaluerende.»</div><button class="copy-btn" id="copy-btn-10" onclick="copyPrompt('prompt-text-10', 'copy-btn-10')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Kvaliteten på medarbeidersamtalen bestemmes av forberedelsen. AI gir deg et spørsmålssett tilpasset situasjonen — du velger hvilke som passer.</p>
         <div class="huma-tip">
           <div class="huma-tip-icon">🏠</div>
@@ -971,7 +1017,7 @@
         <span class="prompt-task">Sett SMART-mål for en ansatt</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Generer 3 SMART-mål for en [stillingstittel] som jobber mot [overordnet mål, f.eks. "å bli klar for en seniorstilling innen 12 måneder"]. For hvert mål: skriv selve målet, beskriv målindikatoren, tidsrammen, og én potensiell hindring med forslag til tiltak. Hold det konkret nok til at man kan se etterpå om det ble nådd.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-11">«Generer 3 SMART-mål for en [stillingstittel] som jobber mot [overordnet mål, f.eks. "å bli klar for en seniorstilling innen 12 måneder"]. For hvert mål: skriv selve målet, beskriv målindikatoren, tidsrammen, og én potensiell hindring med forslag til tiltak. Hold det konkret nok til at man kan se etterpå om det ble nådd.»</div><button class="copy-btn" id="copy-btn-11" onclick="copyPrompt('prompt-text-11', 'copy-btn-11')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Vage mål gir vage resultater. Dette promptet tvinger AI til å levere noe som faktisk er målbart — ikke "jobbe med kommunikasjon".</p>
       </div>
     </div>
@@ -982,7 +1028,7 @@
         <span class="prompt-task">Oppsummer tilbakemeldinger og lag utviklingsmål</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Her er tilbakemeldinger fra leder og kolleger om [Ansatt A] (anonymisert): [lim inn anonymisert innhold]. Oppsummer: 3 klare styrker, 2 utviklingsområder, og foreslå 2 konkrete mål til neste gjennomgang. Hold tonen konstruktiv. Output som kortfattet oppsummering, maks 200 ord.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-12">«Her er tilbakemeldinger fra leder og kolleger om [Ansatt A] (anonymisert): [lim inn anonymisert innhold]. Oppsummer: 3 klare styrker, 2 utviklingsområder, og foreslå 2 konkrete mål til neste gjennomgang. Hold tonen konstruktiv. Output som kortfattet oppsummering, maks 200 ord.»</div><button class="copy-btn" id="copy-btn-12" onclick="copyPrompt('prompt-text-12', 'copy-btn-12')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Å synthesisere tilbakemeldinger fra mange kilder er tidkrevende. AI gjør det raskt — og hjelper deg holde en konsistent og konstruktiv tone i oppsummeringen.</p>
       </div>
     </div>
@@ -1010,7 +1056,7 @@
         <span class="prompt-task">Analyser turnover-data og finn mønstre</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Opptre som en HR-analytiker. Her er anonymiserte turnover-data fra siste 12 måneder: [lim inn data, f.eks. avdeling, ansettelseslengde ved avgang, årsak hvis kjent]. Identifiser 3 mønstre som bør undersøkes videre. Foreslå ett konkret tiltak per mønster. Hold output under 200 ord i punkt-liste-format.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-13">«Opptre som en HR-analytiker. Her er anonymiserte turnover-data fra siste 12 måneder: [lim inn data, f.eks. avdeling, ansettelseslengde ved avgang, årsak hvis kjent]. Identifiser 3 mønstre som bør undersøkes videre. Foreslå ett konkret tiltak per mønster. Hold output under 200 ord i punkt-liste-format.»</div><button class="copy-btn" id="copy-btn-13" onclick="copyPrompt('prompt-text-13', 'copy-btn-13')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Turnover-analyser drukner ofte i Excel-ark. AI hjelper deg finne signalene i støyen — og formulere dem på en måte ledelsen forstår.</p>
         <div class="huma-tip">
           <div class="huma-tip-icon">🏠</div>
@@ -1025,7 +1071,7 @@
         <span class="prompt-task">Skriv et HR-sammendrag til ledergruppen</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Lag et HR-sammendrag til ledergruppen basert på disse nøkkeltallene for [kvartal/periode]: [lim inn tall — f.eks. turnover %, sykefravær %, antall nyansatte, åpne stillinger]. Inkluder: en kort statusoppsummering (3 setninger), 2 positive trender, 2 risikoområder som krever oppmerksomhet, og ett forslag til tiltak. Tonen er tydelig og forretningsrettet — ikke HR-jargon.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-14">«Lag et HR-sammendrag til ledergruppen basert på disse nøkkeltallene for [kvartal/periode]: [lim inn tall — f.eks. turnover %, sykefravær %, antall nyansatte, åpne stillinger]. Inkluder: en kort statusoppsummering (3 setninger), 2 positive trender, 2 risikoområder som krever oppmerksomhet, og ett forslag til tiltak. Tonen er tydelig og forretningsrettet — ikke HR-jargon.»</div><button class="copy-btn" id="copy-btn-14" onclick="copyPrompt('prompt-text-14', 'copy-btn-14')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> Ledergruppen vil ha konklusjoner, ikke rå-data. Dette promptet gir deg et ferdig utkast du kan tilpasse — ikke starte fra blank.</p>
       </div>
     </div>
@@ -1036,7 +1082,7 @@
         <span class="prompt-task">Forklar et HR-konsept for en ikke-HR-leder</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Forklar konseptet [f.eks. "verneombud og AML-plikter" / "prøvetid og oppsigelsesregler" / "eNPS og hva det faktisk måler"] i klart norsk for en daglig leder uten HR-bakgrunn. Maks 120 ord. Avslutt med: "Ta kontakt med HR hvis du lurer på noe." Tonen er tydelig, ikke nedlatende.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-15">«Forklar konseptet [f.eks. "verneombud og AML-plikter" / "prøvetid og oppsigelsesregler" / "eNPS og hva det faktisk måler"] i klart norsk for en daglig leder uten HR-bakgrunn. Maks 120 ord. Avslutt med: "Ta kontakt med HR hvis du lurer på noe." Tonen er tydelig, ikke nedlatende.»</div><button class="copy-btn" id="copy-btn-15" onclick="copyPrompt('prompt-text-15', 'copy-btn-15')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> HR vet ting ledere trenger å vite — men ikke alltid hvordan de skal forklare det. AI hjelper deg finne riktig nivå.</p>
       </div>
     </div>
@@ -1064,7 +1110,7 @@
         <span class="prompt-task">Lag en kravspesifikasjon for nytt HR-system</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Vi er en bedrift med [antall] ansatte i [bransje]. Vi sliter med [3 konkrete problemer, f.eks. "mangel på digital onboarding", "ingen systematisk oppfølging av sykefravær", "manuell håndtering av ferieavvikling"]. Hjelp meg lage en kravspesifikasjon for et nytt HR-system. Del kravene i: must-have, nice-to-have, og absolutt-ikke. Inkluder integrasjonsbehov (lønn, ATS, kalender). Maks 300 ord.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-16">«Vi er en bedrift med [antall] ansatte i [bransje]. Vi sliter med [3 konkrete problemer, f.eks. "mangel på digital onboarding", "ingen systematisk oppfølging av sykefravær", "manuell håndtering av ferieavvikling"]. Hjelp meg lage en kravspesifikasjon for et nytt HR-system. Del kravene i: must-have, nice-to-have, og absolutt-ikke. Inkluder integrasjonsbehov (lønn, ATS, kalender). Maks 300 ord.»</div><button class="copy-btn" id="copy-btn-16" onclick="copyPrompt('prompt-text-16', 'copy-btn-16')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> En god kravspec er det som skiller mellom å kjøpe det du faktisk trenger og det som så flott ut i en demo. AI hjelper deg strukturere tankene — og unngå å glemme de åpenbare tingene.</p>
       </div>
     </div>
@@ -1075,7 +1121,7 @@
         <span class="prompt-task">Forbered deg til leverandørdemoen</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Vi skal ha demo med et HR-system-leverandør. Vår bedrift er [kontekst som over]. Generer 10 skarpe spørsmål vi bør stille i demoen for å avdekke: reell brukervennlighet (ikke selgerens versjon), ekte kundestøtte, GDPR og datalagring, integrasjoner med norske lønnssystemer, og hva som faktisk er inkludert i prisen. Tonen er direkte — vi vil ha ærlige svar, ikke salgspitch.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-17">«Vi skal ha demo med et HR-system-leverandør. Vår bedrift er [kontekst som over]. Generer 10 skarpe spørsmål vi bør stille i demoen for å avdekke: reell brukervennlighet (ikke selgerens versjon), ekte kundestøtte, GDPR og datalagring, integrasjoner med norske lønnssystemer, og hva som faktisk er inkludert i prisen. Tonen er direkte — vi vil ha ærlige svar, ikke salgspitch.»</div><button class="copy-btn" id="copy-btn-17" onclick="copyPrompt('prompt-text-17', 'copy-btn-17')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> De fleste demomøter ender med at selgeren snakker og du nikker. Forberedte spørsmål setter deg i kontroll.</p>
         <div class="huma-tip">
           <div class="huma-tip-icon">🏠</div>
@@ -1090,7 +1136,7 @@
         <span class="prompt-task">Lag en intern business case for nytt HR-system</span>
       </div>
       <div class="prompt-body">
-        <div class="prompt-text">«Hjelp meg bygge en intern business case for å investere i et digitalt HR-system. Vi er [bedriftsstørrelse] med [antall HR-ansatte]. Vi bruker i dag [antall timer] per uke på manuell HR-administrasjon. Estimer potensielle tidsbesparelser, kalkuler verdien av redusert turnover med 10%, og skriv et exec-summary på maks 200 ord som overbeviser CFO om ROI. Tonen er tallbasert og forretningsrettet.»</div>
+        <div class="prompt-text-wrap"><div class="prompt-text" id="prompt-text-18">«Hjelp meg bygge en intern business case for å investere i et digitalt HR-system. Vi er [bedriftsstørrelse] med [antall HR-ansatte]. Vi bruker i dag [antall timer] per uke på manuell HR-administrasjon. Estimer potensielle tidsbesparelser, kalkuler verdien av redusert turnover med 10%, og skriv et exec-summary på maks 200 ord som overbeviser CFO om ROI. Tonen er tallbasert og forretningsrettet.»</div><button class="copy-btn" id="copy-btn-18" onclick="copyPrompt('prompt-text-18', 'copy-btn-18')"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier</button></div>
         <p class="prompt-why"><strong>Hvorfor det virker:</strong> CFO bryr seg ikke om at systemet er kjekt å bruke. De bryr seg om penger. Dette promptet hjelper deg snakke det språket.</p>
       </div>
     </div>
@@ -1103,7 +1149,7 @@
 ════════════════════════════════════════════ -->
 <section class="section section-burg">
   <div class="section-label">Neste steg</div>
-  <h2 class="section-title">Prompts er et utgangspunkt. Systemet er det som holder orden.</h2>
+  <h2 class="section-title">Prompts er et utgangspunkt. Systemet er det som holder orden på alt som har med folka dine å gjøre.</h2>
   <p class="section-lead">AI kan skrive utkast. Men det kan ikke sørge for at onboarding-sjekklisten faktisk ble gjennomført. Eller at sykefraværet ble fulgt opp riktig. Eller at feriesaldoen stemmer. Det er derfor norske SMBer har Huma.</p>
 
   <div class="grid-3" style="margin-top:36px;">
@@ -1128,13 +1174,44 @@
 <section class="cta-banner">
   <h2>Klar til å prøve?</h2>
   <p>Se hva Huma kan gjøre for HR-hverdagen din — uten lange kontrakter og uten skjulte priser.</p>
-  <a href="https://humahr.com" class="btn">Prøv Huma gratis</a>
-  <a href="https://humahr.com" class="btn btn-outline">Book en demo</a>
+  <a href="https://humahr.com" class="btn">Book en demo</a>
+  <a href="#" class="btn btn-outline">Last ned PDF versjon</a>
 </section>
 
 <section class="section section-cream" style="padding:32px 64px; text-align:center;">
   <p style="font-size:12px; opacity:0.5;">© 2026 Huma HR · humahr.com · Denne guiden er produsert for informasjonsformål. Juridisk og regulatorisk innhold bør alltid verifiseres mot gjeldende norsk, svensk eller finsk lov.</p>
 </section>
 
+<script>
+function copyPrompt(textId, btnId) {
+  const el = document.getElementById(textId);
+  const btn = document.getElementById(btnId);
+  const text = el.innerText || el.textContent;
+
+  navigator.clipboard.writeText(text).then(function() {
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Kopiert!';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier';
+    }, 2000);
+  }).catch(function() {
+    // Fallback for older browsers
+    var range = document.createRange();
+    range.selectNode(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Kopiert!';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2H3.5A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Kopier';
+    }, 2000);
+  });
+}
+</script>
 </body>
 </html>
